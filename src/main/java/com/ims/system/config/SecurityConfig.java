@@ -41,7 +41,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/users/**").authenticated() // Any authenticated user can access
                         .requestMatchers("/api/laptops/**").authenticated() // Any authenticated user can access
                         .requestMatchers("/api/assignments/**").authenticated()
-                        .requestMatchers("/api/return-leasing/**").hasRole("ADMIN")
+                        .requestMatchers("/api/return-leasing/**").authenticated() // Changed from hasRole("ADMIN") to authenticated()
                         .requestMatchers("/api/repairs/**").authenticated() // Changed from hasRole("ADMIN") to authenticated()
 
                         // Everything else requires authentication
